@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.clearfix {
+  margin: 0;
+  padding: 0;
+}
+
+.fixed-width{
+  width: 900px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+
+/* ===============
+sidebar
+=============== */
+
+#sidebar {
+  position: fixed;
+  width: 107px;
+  height: 100%;
+  background-color: #262930;
+  z-index: 2;
+
+}
+
+#sidebar li.ready:hover {
+  background-color: #32353d;
+  border-style: solid;
+  border-left-width: thick;
+  border-left-color: #942277
+}
+
+.choosen {
+  background-color: #32353d;
+  border-style: solid;
+  border-left-width: thick;
+  border-left-color: #942277
+}
+
+#sidebar ul li {
+  color: #75797f;
+  padding: 18px 20px 20px 30px;
+
+}
+
+#sidebar a {
+  color: #9a9b9c;
+}
+
+#sidebar li.gradient {
+  background: linear-gradient(#009bb3,#04e7e7);
+  padding-top: 30px;
+}
+
+#sidebar li > img {
+  width: 50px;
+  height: 50px;
+  padding: 0 10px 10px 0;
+}
+
+
+
+/* ===============
+navbar
+=============== */
+
+#navigationBar {
+  width: 100%;
+  height: 100px;
+  /* position: fixed; */
+  /* z-index:1; */
+}
+
+  .naviItem {
+    float:right;
+    width: 100px;
+    padding-left: 350px;
+
+  }
+
+    .navBrand-ungu {
+      color: #850366;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-left: 0px;
+
+    }
+
+ .dropdown {
+      float: right;
+    }
+
+    .buttonUnggu {
+      background-color: #ab5295;
+    }
+
+    a .textPutih {
+      color: #fff;
+    }
+
+
+
+    /* ===============
+    body
+    =============== */
+
+    #bodyStyle {
+      background-color: #e8e6e6;
+      height: 110%;
+      padding-top: 30px;
+    }
+
+    .bodyWidth {
+      width: 80%;
+    }
+
+    .bodyGrey a .Hover{
+      text-decoration: none;
+    }
+
+    .bodyWhite {
+      background-color: #fff;
+      border-style: solid;
+      border-width: thin;
+      border-radius: 10px;
+      border-color: #dfdfdf
+
+    }
+
+    .bodyWhite2 {
+      background-color: #fff;
+      height: 100vh;
+      border-style: solid;
+      border-width: thin;
+      border-radius: 5px;
+      border-color: #dfdfdf
+
+    }
+
+#coursesStyle {
+
+      padding: 10px 5px 5px 0px;
+    }
+
+      img {
+      height: 80px;
+      width: : 250px;
+      border-radius: 5px;
+
+    }
+
+    .titleBlue {
+      color: #17c7c1;
+    }
+
+    .tagging1{
+      width: 100px;
+      height: 25px;
+      background-color: #777777;
+      border-radius: 5px;
+    }
+
+    .tagging2{
+      width: 100px;
+      height: 25px;
+      background-color: #f7ab57;
+      border-radius: 5px;
+    }
+
+    .tagging1 , .tagging2  > p{
+      color: #fff;
+    }
+
+    .date {
+      float: left;
+      color: #c9cacc;
+    }
+
+    /* ===============
+    loginPage
+    =============== */
+
+    .submitBut{
+      background-color: #da4975;
+      color: #fff;
+      font-weight: bolder;
+    }
+
+    .submitBut > a {
+      color: #fff;
+
+    }
+
+    .submitBut  a hover{
+      text-decoration: none;
+    }
+
+    .lorem{
+      margin-top: 130px;
+    }
+}
