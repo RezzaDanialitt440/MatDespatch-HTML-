@@ -91,6 +91,10 @@ navbar
 
     }
 
+    .fontKelabu{
+      color: #a1a2a5;
+    }
+
  .dropdown {
       float: right;
     }
@@ -203,4 +207,6 @@ navbar
     .lorem{
       margin-top: 130px;
     }
+
+
 }

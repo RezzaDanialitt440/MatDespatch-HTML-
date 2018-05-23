@@ -8,6 +8,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   </head>
   <body>
 
@@ -40,7 +41,7 @@
       <div class="container">
       <nav class="navbar navbar-expand-sm navbar-light navibar" id="navigationBar">
         <div class="row container">
-          <a href="#" class="navBrand-ungu"style="text-decoration: none">Cources</a>
+          <a href="#" class="navBrand-ungu"style="text-decoration: none">Cources</a><span class="fontKelabu">&nbsp(8)</span>
           <button type="button" name="button" class="navbar-toggler">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -80,103 +81,41 @@
           body
           ================= -->
 <section id="bodyStyle">
-  <div class="container bodyWidth">
+<div class="container bodyWidth" ng-app="myApp" ng-controller="myCtrl">
+  <div class="" ng-repeat="course in myCourse">
+
     <a  style="text-decoration: none" href="login.html">
     <div class="container-fluid bodyWhite mb-3">
     <div class="row" id="coursesStyle">
     <div class="col-md-12 col-sm-12 col-xs-12">
       <div class="row">
         <div class="col-md-2 col-sm-2 col-xs-2 rapatKiri">
-          <img alt="Bootstrap Image Preview" class="img-rounded" src="https://getuikit.com/v2/docs/images/placeholder_600x400.svg" />
+          <img alt="Bootstrap Image Preview" class="img-rounded" src="{{course.thumbnail}}" />
         </div>
         <div class="col-md-10 col-sm-10 col-xs-10">
           <div class="row">
             <div class="col-md-12  col-sm-12 col-xs-12 mt-2 mb-1">
               <h5 class="titleBlue ml-3">
-                Design Your Bussiness
+                {{course.title}}
               </h5>
             </div>
           </div>
           <div class="row">
             <div class="col-md-2 col-sm-2 col-xs-2">
+              <div ng-if ="course.status == 'Published'">
                <div class="tagging1 ml-3">
-                 <p class="text-center">Published</p>
+                 <p class="text-center">{{course.status}}</p>
                </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 date ml-4">
-              <p>Updated: May 1, 2018</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </a>
-  </div>
-
-
-  <div class="container bodyWidth">
-    <a  style="text-decoration: none" href="login.html">
-    <div class="container-fluid bodyWhite mb-3">
-    <div class="row" id="coursesStyle">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="row">
-        <div class="col-md-2 col-sm-2 col-xs-2 rapatKiri">
-          <img alt="Bootstrap Image Preview" class="img-rounded" src="https://getuikit.com/v2/docs/images/placeholder_600x400.svg" />
-        </div>
-        <div class="col-md-10 col-sm-10 col-xs-10">
-          <div class="row">
-            <div class="col-md-12  col-sm-12 col-xs-12 mt-2 mb-1">
-              <h5 class="titleBlue ml-3">
-                Launch Your Program
-              </h5>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-2 col-xs-2">
-               <div class="tagging1 ml-3">
-                 <p class="text-center">Published</p>
-               </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 date ml-4">
-              <p>Updated: May 2, 2018</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  </a>
-  </div>
-
-
-  <div class="container bodyWidth">
-    <a  style="text-decoration: none" href="login.html">
-    <div class="container-fluid bodyWhite mb-3">
-    <div class="row" id="coursesStyle">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="row">
-        <div class="col-md-2 col-sm-2 col-xs-2 rapatKiri">
-          <img alt="Bootstrap Image Preview" class="img-rounded" src="https://getuikit.com/v2/docs/images/placeholder_600x400.svg" />
-        </div>
-        <div class="col-md-10 col-sm-10 col-xs-10">
-          <div class="row">
-            <div class="col-md-12  col-sm-12 col-xs-12 mt-2 mb-1">
-              <h5 class="titleBlue ml-3">
-                Web Design Thinking
-              </h5>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-2 col-xs-2">
+             </div>
+             <div ng-if ="course.status == 'Draft'">
                <div class="tagging2 ml-3">
-                 <p class="text-center">Draft</p>
+                 <p class="text-center">{{course.status}}</p>
                </div>
+             </div>
+
             </div>
             <div class="col-md-6 col-sm-6 col-xs-6 date ml-4">
-              <p>Updated: May 3, 2018</p>
+              <p>Updated: {{course.date}}</p>
             </div>
           </div>
         </div>
@@ -186,43 +125,7 @@
   </div>
   </a>
   </div>
-
-
-  <div class="container bodyWidth">
-    <a  style="text-decoration: none" href="login.html">
-    <div class="container-fluid bodyWhite mb-3">
-    <div class="row" id="coursesStyle">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="row">
-        <div class="col-md-2 col-sm-2 col-xs-2 rapatKiri">
-          <img alt="Bootstrap Image Preview" class="img-rounded" src="https://getuikit.com/v2/docs/images/placeholder_600x400.svg" />
-        </div>
-        <div class="col-md-10 col-sm-10 col-xs-10">
-          <div class="row">
-            <div class="col-md-12  col-sm-12 col-xs-12 mt-2 mb-1">
-              <h5 class="titleBlue ml-3">
-                Intro to Digital Strategy
-              </h5>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-2 col-sm-2 col-xs-2">
-               <div class="tagging2 ml-3">
-                 <p class="text-center">Draft</p>
-               </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 date ml-4">
-              <p>Updated: May 4, 2018</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-  </div>
-  </a>
-  </div>
-
 
 
 
@@ -231,5 +134,18 @@
 <!-- end col-11   -->
 </div>
 </div>
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("https://api.myjson.com/bins/15zsje")
+  .then(function(response) {
+      $scope.myCourse = response.data;
+  });
+});
+</script>
+<!-- <script src="js/handlebars.runtime-v4.0.11.js"></script>
+<script src="js/main.js"></script> -->
   </body>
 </html>

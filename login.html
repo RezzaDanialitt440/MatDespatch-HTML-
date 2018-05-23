@@ -8,6 +8,7 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
   </head>
   <body>
 
@@ -40,7 +41,7 @@
       <div class="container">
       <nav class="navbar navbar-expand-sm navbar-light navibar" id="navigationBar">
         <div class="row container">
-          <a href="#" class="navBrand-ungu" style="text-decoration: none">Cources</a>
+          <a href="#" class="navBrand-ungu" style="text-decoration: none">Cources</a><span class="fontKelabu">&nbsp(8)</span>
           <button type="button" name="button" class="navbar-toggler">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -81,14 +82,15 @@
           body
           ================= -->
 <section id="bodyStyle">
-
+<div ng-app="myApp" ng-controller="myCtrl">
+  <!-- <div ng-repeat="course in myCourseDetails"> -->
   <div class=" container bodyWhite2">
   <div class="container-fluid">
 	<div class="row ">
 			<div class="col-md-5 col-sm-6 col-xs-6 noPadding">
 						<div class="col-md-12">
               <h5 class="titleBlue py-3">
-                Design Your Bussiness
+                {{myCourseDetails[3].title}}
               </h5>
               <div class="list-inline">
               <div class="tagging1 list-inline-item">
@@ -117,6 +119,8 @@
 		</div>
 	</div>
 </div>
+<!-- </div> -->
+</div>
 
 
 
@@ -127,5 +131,14 @@
 <!-- end col-11   -->
 </div>
 </div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http.get("https://api.myjson.com/bins/15zsje")
+  .then(function(response) {
+      $scope.myCourseDetails = response.data;
+  });
+});
+</script>
   </body>
 </html>
